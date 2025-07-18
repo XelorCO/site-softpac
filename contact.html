@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - SOFT PAC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><img src="img/logo.jpg" alt="Logo de SOFT PAC"></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle-btn" title="Changer le thème">☾</button>
+        </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Parlons de votre projet</h1>
+                    <p>Remplissez le formulaire ou utilisez nos coordonnées. Nous sommes là pour vous répondre.</p>
+                </div>
+                <div class="contact-layout">
+                    <div class="card">
+                        <form action="https://formsubmit.co/contact@softpac.fr" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nom Complet</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Votre Message</label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                            </div>
+                            <input type="hidden" name="_next" value="merci.html">
+                            <button type="submit" class="btn">Envoyer</button>
+                        </form>
+                    </div>
+                    
+                    <aside class="contact-info-card">
+                        <div class="contact-info-header">
+                            <img src="img/logo.jpg" alt="Logo SOFT PAC" class="contact-info-logo">
+                            <h3>SOFT PAC</h3>
+                        </div>
+                        <div class="contact-info-body">
+                            <p>Votre partenaire digital, disponible pour donner vie à vos projets.</p>
+                            <ul class="contact-details">
+                                <li><strong>Email :</strong> <a href="mailto:contact@softpac.fr">contact@softpac.fr</a></li>
+                                <li><strong>Téléphone :</strong> <a href="tel:+33766719729">+33 7 66 71 97 29</a></li>
+                                <li><strong>Disponibilité :</strong> 24H/24 - 7J/7</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 SOFT PAC. Tous droits réservés.</p>
+            <p><a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
