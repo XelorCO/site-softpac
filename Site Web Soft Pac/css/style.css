@@ -1,0 +1,364 @@
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+:root {
+    /* Couleurs de base (Thème clair) */
+    --background-light: #ffffff;
+    --background-dark: #0d0d0f;
+    --card-bg-light: #f7f7f7;
+    --card-bg-dark: #161618;
+    --text-light: #0d0d0f;
+    --text-dark: #e8e8e8;
+    --text-light-secondary: #6e6e73;
+    --text-dark-secondary: #a1a1a6;
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-dark: rgba(255, 255, 255, 0.1);
+
+    /* --- NOUVELLE PALETTE FUTURISTE & PROFESSIONNELLE --- */
+    --futuristic-glow-start: #007BFF;   /* Bleu Vibrant */
+    --futuristic-glow-mid: #00BFFF;     /* Cyan Vif */
+    --futuristic-glow-end: #20C997;     /* Vert d'eau / Teal */
+
+    /* Le dégradé principal pour les animations */
+    --futuristic-gradient: linear-gradient(120deg, 
+        var(--futuristic-glow-start), 
+        var(--futuristic-glow-mid), 
+        var(--futuristic-glow-end)
+    );
+    
+    /* Thème par défaut : Clair */
+    --bg-color: var(--background-light);
+    --card-bg: var(--card-bg-light);
+    --text-color: var(--text-light);
+    --text-secondary: var(--text-light-secondary);
+    --border-color: var(--border-light);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--background-dark);
+    --card-bg: var(--card-bg-dark);
+    --text-color: var(--text-dark);
+    --text-secondary: var(--text-dark-secondary);
+    --border-color: var(--border-dark);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   2. TYPOGRAPHIE & ÉLÉMENTS DE BASE
+   ========================================================================== */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h3 { font-size: 1.5rem; }
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* --- LIENS FUTURISTES --- */
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--futuristic-glow-mid);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section-title { text-align: center; margin-bottom: 1rem; }
+.section-subtitle { text-align: center; max-width: 600px; margin: 0 auto 4rem auto; font-size: 1.1rem; }
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+.site-header {
+    position: sticky; top: 0; z-index: 1000; width: 100%;
+    padding: 1rem 0;
+    background: color-mix(in srgb, var(--bg-color) 70%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+.main-nav { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; color: var(--text-color); }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
+.nav-links a { font-weight: 500; font-size: 1rem; color: var(--text-secondary); padding: 5px 0; border-radius: 8px; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--text-color); }
+
+/* --- LIEN ACTIF AVEC DÉGRADÉ FUTURISTE --- */
+.nav-links a.active {
+    font-weight: 600;
+    background: var(--futuristic-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Dark Mode Toggle */
+.theme-switch-wrapper { display: flex; align-items: center; gap: 10px; }
+.theme-switch { display: inline-block; height: 24px; position: relative; width: 48px; }
+.theme-switch input { display:none; }
+.slider { background-color: #ccc; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 24px; }
+.slider:before { background-color: #fff; bottom: 4px; content: ""; height: 16px; left: 4px; position: absolute; transition: .4s; width: 16px; border-radius: 50%; }
+input:checked + .slider { background: var(--futuristic-gradient); }
+input:checked + .slider:before { transform: translateX(24px); }
+
+/* ==========================================================================
+   4. SECTIONS & COMPONENTS
+   ========================================================================== */
+main { padding: 4rem 0; }
+
+/* Hero Section */
+.hero { text-align: center; padding: 6rem 0; }
+.hero-content { max-width: 800px; margin: 0 auto; }
+.hero h1 { margin-bottom: 1.5rem; }
+.hero p { font-size: 1.25rem; margin-bottom: 2.5rem; color: var(--text-secondary); }
+
+/* --- BOUTONS FUTURISTES AMÉLIORÉS --- */
+.cta-button, .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; 
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease, background-position 0.5s ease;
+    
+    background: var(--futuristic-gradient);
+    background-size: 200% auto;
+    background-position: 0% 0%;
+}
+.cta-button:hover, .btn:hover {
+    color: white;
+    transform: translateY(-4px) scale(1.02);
+    background-position: 100% 0%; 
+    /* Ombre colorée "glow" plus intense */
+    box-shadow: 0 0 25px color-mix(in srgb, var(--futuristic-glow-mid) 50%, transparent),
+                0 0 40px color-mix(in srgb, var(--futuristic-glow-start) 40%, transparent);
+}
+
+
+/* --- CARTES AVEC OMBRE FUTURISTE AU SURVOL --- */
+.card, .service-card, .testimonial-card, .project-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: none;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+.service-card:hover, .project-card:hover, .card:hover, .testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in srgb, var(--futuristic-glow-mid) 30%, transparent);
+    /* Ombre futuriste qui apparaît au survol */
+    box-shadow: 0 10px 40px -10px color-mix(in srgb, var(--futuristic-glow-start) 25%, transparent);
+}
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+.service-card h3 { margin-bottom: 0.5rem; }
+
+.testimonial-card { max-width: 700px; margin: 2rem auto; text-align: center; }
+.testimonial-card p:first-child { font-size: 1.2rem; font-style: italic; color: var(--text-color); }
+.testimonial-card strong { font-weight: 600; color: var(--text-secondary); }
+
+.projects-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+.project-card { padding: 0; display: flex; flex-direction: column; }
+.project-image { width: 100%; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; }
+.project-image img { width: 100%; height: 100%; object-fit: cover; }
+.project-info { padding: 1.5rem; }
+.project-title { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.project-description { font-size: 1rem; color: var(--text-secondary); }
+.project-tags { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.project-tags .tag {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Contact Page */
+.contact-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: flex-start; }
+.contact-form .form-group { margin-bottom: 1.5rem; }
+.contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-secondary); }
+.contact-form input, .contact-form textarea {
+    width: 100%; padding: 1rem; border: 1px solid var(--border-color); border-radius: 12px;
+    background-color: var(--bg-color); color: var(--text-color); font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* --- CHAMP DE FORMULAIRE ACTIF AVEC GLOW --- */
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--futuristic-glow-mid);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--futuristic-glow-mid) 20%, transparent);
+}
+
+.contact-info-card { padding: 2.5rem; }
+.contact-details { list-style: none; margin-top: 1rem; }
+.contact-details li { margin-bottom: 0.5rem; color: var(--text-secondary); }
+.contact-details a { color: var(--text-color); }
+.contact-details a:hover { color: var(--futuristic-glow-mid); }
+
+/* Page Header */
+.page-header { text-align: center; padding: 2rem 0 4rem 0; }
+.page-header p { font-size: 1.1rem; max-width: 600px; margin: 1rem auto 0; }
+
+/* ==========================================================================
+   5. FOOTER (Refonte Esthétique)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--card-bg); /* Un fond distinct mais cohérent */
+    color: var(--text-secondary);
+    padding: 4rem 20px;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    text-align: left; /* On passe de center à left pour la nouvelle structure */
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-social {
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.footer-about p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.footer-links ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0.75rem 2rem; 
+}
+
+.footer-links li {
+    margin-bottom: 0;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--futuristic-glow-mid); /* Utilise la couleur futuriste au survol */
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.social-icons a {
+    color: var(--text-secondary);
+    font-size: 1.6rem; /* Augmente la taille des icônes */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--futuristic-glow-mid);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: var(--text-secondary);
+}
+
+.footer-bottom a:hover {
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   6. ANIMATIONS & RESPONSIVE
+   ========================================================================== */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition-delay: 0.2s;
+}
+.fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) {
+    .contact-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+}
+/* --- Style pour le logo sur la page contact --- */
+.contact-info-card .contact-logo {
+    max-width: 150px; 
+    display: block;
+    margin: 0 auto 1.5rem auto; 
+    border-radius: 8px; 
+}
