@@ -1,77 +1,115 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOFT PAC - Solutions Digitales</title>
+    <title>SoftPac - Solutions Digitales Innovantes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
+
     <header class="site-header">
-        <div class="container header-container">
-            <a href="index.html" class="logo"><img src="img/logo.jpg" alt="Logo de SOFT PAC"></a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="theme-toggle" class="theme-toggle-btn" title="Changer le thème">☾</button>
-        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="logo">SOFTPAC</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="solutions.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section class="animated-hero-section">
-            <div class="background-overlay"></div>
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop" alt="Fond de code informatique" class="background-image">
-            <div class="container content">
-                <div id="animated-text-container">
-                    </div>
-                <a href="contact.html" class="btn hero-btn" id="hero-button">Parlons de votre projet</a>
+        <section class="hero">
+            <div class="hero-content fade-in-section">
+                <h1>Solutions Digitales Innovantes</h1>
+                <p>Transformez vos idées en réalité digitale. Développement web, applications sur mesure et accompagnement technologique pour propulser votre entreprise vers le futur.</p>
+                <a href="contact.html" class="cta-button">Démarrons votre projet</a>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                 <div class="page-header">
-                    <h2>Ce que nos clients disent de nous</h2>
-                </div>
-                <div class="testimonial-slider">
-                    <div class="testimonial-container">
-                        <div class="testimonial">
-                             <div class="card">
-                                <blockquote>"Un professionnalisme et une écoute rares. SOFT PAC a su comprendre nos besoins et livrer une solution qui a dépassé nos attentes. Je recommande vivement !"</blockquote>
-                                <cite>– CEO de HomeDesignElec</cite>
-                            </div>
-                        </div>
-                        <div class="testimonial">
-                            <div class="card">
-                                <blockquote>"Réactivité et expertise au rendez-vous pour une maintenance critique. Notre site n'a jamais été aussi performant. Merci !"</blockquote>
-                                <cite>– Fondateur de Startup MedTech</cite>
-                            </div>
-                        </div>
-                        <div class="testimonial">
-                             <div class="card">
-                                <blockquote>"Une équipe pédagogue qui a su nous former et nous rendre autonomes. Un vrai partenaire de confiance pour notre transformation digitale."</blockquote>
-                                <cite>– Gérante de PME Locale</cite>
-                            </div>
-                        </div>
+        <section id="services" class="container">
+             <div class="fade-in-section">
+                <h2 class="section-title">Nos Expertises</h2>
+                <p class="section-subtitle">Des solutions sur mesure pour accompagner votre croissance numérique et garantir votre succès.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">💻</span>
+                        <h3>Développement Web & Logiciels</h3>
+                        <p>Sites vitrine, plateformes e-commerce, applications métier... Nous concevons des solutions digitales innovantes, intuitives et performantes adaptées à vos besoins.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🎯</span>
+                        <h3>Gestion de Projet Informatique</h3>
+                        <p>De l'analyse des besoins à la livraison finale, notre méthodologie garantit le respect des délais. Un accompagnement personnalisé à chaque étape.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <span class="service-icon">🛡️</span>
+                        <h3>Assistance & Cybersécurité</h3>
+                        <p>Support technique rapide à distance et formation aux bonnes pratiques pour protéger vos données et sécuriser votre infrastructure numérique.</p>
                     </div>
                 </div>
-                <div class="testimonial-dots"></div>
+            </div>
+        </section>
+
+        <section class="testimonials container fade-in-section">
+            <h2 class="section-title">Ils nous font confiance</h2>
+            <div class="testimonial-card">
+                <p>"Un professionnalisme et une écoute rares. SOFTPAC a su comprendre nos besoins et livrer une solution qui a dépassé nos attentes."</p>
+                <p><strong>– CEO de HomeDesignElec</strong></p>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2025 SOFT PAC. Tous droits réservés.</p>
-            <p><a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a></p>
-        </div>
-    </footer>
+    <div class="container">
+        <div class="footer-content">
+            
+            <div class="footer-about">
+                <h3 class="footer-logo">SOFTPAC</h3>
+                <p>Solutions digitales innovantes pour propulser votre entreprise vers le futur.</p>
+            </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+            <div class="footer-links">
+                <h4 class="footer-title">Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="solutions.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4 class="footer-title">Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="https://fr.linkedin.com/in/enzo-paccard-7394a52b1" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/XelorCO" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 SOFTPAC - Tous droits réservés - Fais avec ♥ par nous  | <a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Confidentialité</a></p>
+        </div>
+    </div>
+</footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>
