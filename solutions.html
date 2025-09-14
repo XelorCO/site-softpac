@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — SOFTPAC</title>
+  <meta name="theme-color" content="#0d1019" />
+
+  <!-- Polices “tech” + Icônes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="index.html" class="logo" aria-label="SOFTPAC">
+        <img class="logo-img" src="img/logo.jpg" alt="SOFTPAC" />
+        <span class="logo-text">SOFTPAC</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="solutions.html"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-shield-halved"></i> Services</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="container">
+      <header class="page-header fade-in-section">
+        <h1 class="page-title"><i class="fa-solid fa-briefcase"></i> Notre Portfolio</h1>
+        <p>Découvrez une sélection de projets qui illustrent notre expertise et l'impact positif que nous avons eu pour nos clients.</p>
+      </header>
+
+      <div class="projects-gallery">
+        <!-- 1 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/kalilinux.webp" alt="Techniques de Pentest avec Kali Linux" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Techniques de Pentest avec Kali Linux</h3>
+            <p class="project-description">Utilisation de Burp Suite, exploitation de failles XSS, SQL et CSRF.</p>
+            <div class="project-tags">
+              <span class="tag">Pentest</span>
+              <span class="tag">HTTP/HTTPS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/Osint.jpeg" alt="Investigation en sources ouvertes (OSINT)" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Investigation en sources ouvertes (OSINT)</h3>
+            <p class="project-description">Utilisation d’outils de recherche Open Source, application de l’éthique OSINT et respect du RGPD.</p>
+            <div class="project-tags">
+              <span class="tag">OSINT</span>
+              <span class="tag">RGPD</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/html.png" alt="Développement Web HTML/CSS/JS" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Développement Web HTML/CSS/JS</h3>
+            <p class="project-description">Création en HTML/CSS/JS et PHP : sites performants, accessibles et maintenables.</p>
+            <div class="project-tags">
+              <span class="tag">Dev Web</span>
+              <span class="tag">HTML</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/Isr.webp" alt="Systèmes et Réseaux d'entreprise (ISR)" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Systèmes et Réseaux d'entreprise</h3>
+            <p class="project-description">Création et gestion d’un réseau d’entreprise sécurisé.</p>
+            <div class="project-tags">
+              <span class="tag">LAN/WAN</span>
+              <span class="tag">TCP/IP</span>
+              <span class="tag">Firewall</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/hardware project.jpg" alt="Reverse Engineering Hardware" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Reverse Engineering Hardware</h3>
+            <p class="project-description">Apprentissage de l’hardware dans sa globalité + tests sur appareils connectés.</p>
+            <div class="project-tags">
+              <span class="tag">Hack</span>
+              <span class="tag">Hardware</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="project-card fade-in-section">
+          <div class="project-image">
+            <img src="img/Htb-Rtme.jpg" alt="Plateformes d'entraînement Hack The Box & Root Me" />
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Plateformes d’entraînement Cyber</h3>
+            <p class="project-description">Entraînements et exercices sur les plateformes Root Me Pro et Hack The Box.</p>
+            <div class="project-tags">
+              <span class="tag">RootMe Pro</span>
+              <span class="tag">HTB</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">SOFTPAC</div>
+        <p>Solutions digitales modernes : web, assistance, sécurité.</p>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title">Liens utiles</h4>
+        <ul>
+          <li><a href="solutions.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4 class="footer-title">Suivez-nous</h4>
+        <div class="social-icons">
+          <a href="https://github.com/XelorCO" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://fr.linkedin.com/in/enzo-paccard-7394a52b1" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SOFTPAC — Tous droits réservés - Fais avec ♥ par nous — <a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

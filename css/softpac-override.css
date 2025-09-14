@@ -1,0 +1,178 @@
+/* ================= SOFTPAC OVERRIDE =================
+   Accent: #59b95f   Fond: #0d1019
+   Objectif: ne modifier QUE l’apparence (polices/couleurs),
+   sans casser tes mises en page existantes.
+   À charger APRES tes CSS existants.
+===================================================== */
+
+/* Variables thème (réutilisables) */
+:root{
+  --sp-bg: #0d1019;
+  --sp-surface: #111625;
+  --sp-border: #1b2233;
+  --sp-text: #e7f3ea;
+  --sp-muted:#a7b5ae;
+  --sp-primary:#59b95f;
+  --sp-primary-2:#49aa50;
+  --sp-shadow: 0 10px 30px rgba(89,185,95,.15);
+
+  --sp-font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --sp-font-display: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Fond + texte global (on ne touche pas au layout) */
+html, body{
+  background: var(--sp-bg) !important;
+  color: var(--sp-text) !important;
+  font-family: var(--sp-font-body) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titres plus “carte de visite” */
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--sp-font-display) !important;
+  color: var(--sp-text) !important;
+  letter-spacing: .2px;
+  line-height: 1.2;
+  margin-top: 0;
+}
+h1{font-weight:900}
+h2{font-weight:800}
+h3{font-weight:700}
+
+/* Liens verts et lisibles */
+a{
+  color: var(--sp-primary) !important;
+  text-decoration: none;
+}
+a:hover{
+  opacity: .95;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Boutons génériques déjà présents sur le site */
+button,
+input[type="submit"],
+.btn,
+[class*="btn-"],
+a.button{
+  background: var(--sp-primary) !important;
+  color: #0b0f17 !important;
+  border: 1px solid transparent !important;
+  border-radius: 12px !important;
+  font-family: var(--sp-font-display) !important;
+  font-weight: 800 !important;
+  padding: 12px 18px !important;
+  box-shadow: 0 6px 16px rgba(89,185,95,.25) !important;
+  transition: transform .12s ease, filter .2s ease !important;
+}
+button:hover,
+input[type="submit"]:hover,
+.btn:hover,
+[class*="btn-"]:hover,
+a.button:hover{
+  filter: saturate(1.05) brightness(1.02) !important;
+  transform: translateY(-1px);
+}
+
+/* Variantes possibles déjà utilisées (outline/ghost) */
+.btn-outline{
+  background: transparent !important;
+  color: var(--sp-text) !important;
+  border-color: var(--sp-primary) !important;
+  box-shadow: none !important;
+}
+.btn-outline:hover{ background: rgba(89,185,95,.1) !important; }
+
+.btn-ghost{
+  background: transparent !important;
+  color: var(--sp-primary) !important;
+  box-shadow: none !important;
+}
+.btn-ghost:hover{ background: rgba(89,185,95,.08) !important; }
+
+/* Sections/cartes (services, features…) sans casser la grille) */
+section,
+.card,
+.box,
+.feature,
+.service,
+.item,
+.tile{
+  background: var(--sp-surface) !important;
+  color: var(--sp-text) !important;
+  border: 1px solid var(--sp-border) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--sp-shadow) !important;
+}
+
+/* Petites améliorations d’en-tête/navigation si ton site a un header sticky */
+header,
+.site-header,
+nav.navbar{
+  background: linear-gradient(180deg, rgba(13,16,25,.92), rgba(13,16,25,.75)) !important;
+  border-bottom: 1px solid var(--sp-border) !important;
+  backdrop-filter: saturate(1.05) blur(6px);
+}
+nav a, .nav a, header a{
+  color: var(--sp-text) !important;
+  font-family: var(--sp-font-display) !important;
+  font-weight: 700 !important;
+  position: relative;
+  padding-bottom: 6px;
+}
+nav a::after, .nav a::after, header a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:2px; height:2px;
+  background: var(--sp-primary); border-radius: 2px; transition: right .22s ease;
+}
+nav a:hover::after, .nav a[aria-current="page"]::after, header a:hover::after{ right:0; }
+
+/* Paragraphes + textes secondaires */
+p, li, span, small{ color: var(--sp-text) !important; }
+.muted, .text-muted, .subtitle, .lead{ color: var(--sp-muted) !important; }
+
+/* Formulaires (contact) */
+input, select, textarea{
+  background: #0f1421 !important;
+  border: 1px solid var(--sp-border) !important;
+  color: var(--sp-text) !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+}
+input::placeholder, textarea::placeholder{ color: #7e8a85 !important; }
+input:focus, select:focus, textarea:focus{
+  outline: none !important;
+  border-color: rgba(89,185,95,.55) !important;
+  box-shadow: 0 0 0 3px rgba(89,185,95,.15) !important;
+}
+
+/* Tableaux / séparateurs */
+hr{ border: none; height: 1px; background: var(--sp-border) !important; }
+table{ width:100%; border-collapse: collapse; }
+th, td{ border-bottom: 1px solid var(--sp-border); padding: 12px 14px; }
+th{ background: var(--sp-surface); text-align: left; font-family: var(--sp-font-display); }
+
+/* Footer */
+footer, .site-footer{
+  background: linear-gradient(180deg, rgba(17,22,37,.85), rgba(13,16,25,1)) !important;
+  border-top: 1px solid var(--sp-border) !important;
+  color: var(--sp-muted) !important;
+}
+footer a{ color: var(--sp-primary) !important; }
+
+/* Liens accent “contact@ / +33 …” façon carte de visite */
+.link-accent, a[href^="mailto:"], a[href^="tel:"]{
+  color: var(--sp-primary) !important;
+  border-bottom: 2px solid rgba(89,185,95,.35);
+  padding-bottom: 1px;
+}
+.link-accent:hover, a[href^="mailto:"]:hover, a[href^="tel:"]:hover{
+  border-color: var(--sp-primary);
+  background: linear-gradient(90deg, rgba(89,185,95,.10), transparent 70%);
+}
+
+/* Sélection de texte */
+::selection{ background: rgba(89,185,95,.25); }
+:focus-visible{ outline: 2px solid var(--sp-primary); outline-offset: 2px; }

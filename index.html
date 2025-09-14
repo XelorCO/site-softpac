@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SOFTPAC — Solutions Digitales Innovantes</title>
+  <meta name="theme-color" content="#0d1019" />
+
+  <!-- Polices “tech” + Icônes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="index.html" class="logo" aria-label="SOFTPAC">
+        <img class="logo-img" src="img/logo.jpg" alt="SOFTPAC" />
+        <span class="logo-text">SOFTPAC</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i> Accueil</a></li>
+        <li><a href="solutions.html"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="services.html"><i class="fa-solid fa-shield-halved"></i> Services</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- MAIN -->
+  <main class="compact">
+  <section class="hero compact-hero">
+      <div class="hero-content fade-in-section">
+        <h1>Solutions Digitales Innovantes</h1>
+        <p>Développement web & logiciels, gestion de projet, assistance & cybersécurité — des solutions modernes et sécurisées adaptées à votre activité.</p>
+        <p class="hero-cta">
+          <a class="btn" href="contact.html"><i class="fa-solid fa-paper-plane"></i> Démarrer mon projet</a>
+          <span class="badge-cyber"><i class="fa-solid fa-lock"></i> Sécurité by design</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES APERÇU (on garde tes libellés d’origine) -->
+    <section id="services" class="container home-services">
+      <div class="fade-in-section">
+        <h2 class="section-title">Nos Expertises</h2>
+        <p class="section-subtitle">Des prestations sur mesure pour accompagner votre croissance numérique, de la conception à la maintenance.</p>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-icon">💻</span>
+            <h3>Développement Web & Logiciels</h3>
+            <p>Sites vitrine, e-commerce, applications métiers : des solutions intuitives et performantes, parfaitement adaptées à votre activité.</p>
+            <div class="service-tags">
+              <span class="tag">Front/Back</span><span class="tag">SEO</span><span class="tag">Performance</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon">🛡️</span>
+            <h3>Assistance & Cybersécurité</h3>
+            <p>Support technique rapide à distance, bonnes pratiques, durcissement & protection durable de votre infrastructure.</p>
+            <div class="service-tags">
+              <span class="tag">SOC</span><span class="tag">Hardening</span><span class="tag">Backup</span>
+            </div>
+          </article>
+
+          <!-- NOUVEAU : Assistance informatique générale (demande de l’utilisateur) -->
+          <article class="service-card">
+            <span class="service-icon">🛠️</span>
+            <h3>Assistance informatique générale</h3>
+            <p>Petites et grandes entreprises : mise en place de nouveaux équipements, adaptation de logiciels, paramétrage de périphériques, interventions hardware & backend, déploiement de matériel d’entreprise.</p>
+            <div class="service-tags">
+              <span class="tag">Hardware</span><span class="tag">Backend</span><span class="tag">Déploiement</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bouton CENTRÉ -->
+        <p class="center mt-3">
+          <a class="btn" href="services.html">Voir tous les services</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Témoignage (tu gardes ton contenu si tu en as un) -->
+    <section class="container">
+      <div class="testimonial-card fade-in-section">
+        <p>“Une équipe réactive, un code propre et un déploiement sans friction. Le site est rapide et nos clients adorent.”</p>
+        <strong>— HDE Concept</strong>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-about">
+        <div class="footer-logo">SOFTPAC</div>
+        <p>Solutions digitales modernes : web, assistance, sécurité.</p>
+      </div>
+      <div class="footer-links">
+        <h4 class="footer-title">Liens utiles</h4>
+        <ul>
+          <li><a href="solutions.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4 class="footer-title">Suivez-nous</h4>
+        <div class="social-icons">
+          <a href="https://github.com/XelorCO" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://fr.linkedin.com/in/enzo-paccard-7394a52b1" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SOFTPAC — Tous droits réservés - Fais avec ♥ par nous — <a href="mentions-legales.html">Mentions Légales</a> • <a href="politique-confidentialite.html">Confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
