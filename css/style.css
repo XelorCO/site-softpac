@@ -569,72 +569,123 @@ main.compact {
   object-fit: contain !important;
   transform: none !important;
 }
-/* PAGE OUTILS */
+/* ===========================
+   PAGE OUTILS (DARK THEME)
+   =========================== */
+
 .container-outils {
-  max-width: 1100px;
-  margin: 40px auto;
+  max-width: 1200px;
+  margin: 60px auto;
   padding: 0 20px;
+  color: #e0e0e0; /* Texte clair */
 }
+
+/* Intro */
 .intro {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
+
 .intro h1 {
-  color: #333;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 10px;
+  color: #ffffff;
+  /* Effet petit trait vert sous le titre */
+  border-bottom: 3px solid #00ff88;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
-.tool-category {
-  margin-bottom: 50px;
-}
-.tool-category h2 {
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  color: #333;
+.intro p {
+  color: #aaaaaa;
+  font-size: 1.1rem;
+  margin-top: 15px;
 }
 
+/* Titres de catégories */
+.category-title {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  border-left: 5px solid #00ff88;
+  padding-left: 15px;
+}
+
+/* La Grille (Responsive) */
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 25px;
+  margin-bottom: 60px;
 }
 
+/* Carte Outil */
 .tool-card {
-  background: #fff;
-  border: 1px solid #ddd;
+  background-color: #161b22;
+  border: 1px solid #30363d;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-.tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-.tool-card h3 {
-  margin-top: 0;
-  color: #007bff;
-}
-.tool-card p {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.5;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-tool {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 15px;
-  background: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
+/* Effet Hover sur la carte */
+.tool-card:hover {
+  transform: translateY(-5px);
+  border-color: #00ff88;
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.1);
 }
+
+.card-content h3 {
+  margin-top: 0;
+  color: #00ff88;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Le Bouton */
+.btn-tool {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background-color: transparent;
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
 .btn-tool:hover {
-  background: #0056b3;
+  background-color: #00ff88;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+}
+
+/* RESPONSIVE (Mobile) */
+@media (max-width: 768px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+  .intro h1 {
+    font-size: 1.8rem;
+  }
 }
